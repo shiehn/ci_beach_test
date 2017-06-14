@@ -3,8 +3,7 @@ platform: linux
 
 image_resource:
   type: docker-image
-  source:
-    repository: openjdk
+  source: {repository: gradle}
 
 inputs:
 - name: source-code
@@ -14,6 +13,7 @@ outputs:
 
 run:
   path: source-code/ci/build_source_test.sh
+  user: root
 
 
 
