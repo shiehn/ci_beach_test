@@ -22,8 +22,6 @@ jobs:
     trigger: true
   - task: build_source_test
     file: source-code/ci/build_source_test.yml
-
-jobs:
 - name: ci_beach_deploy
   plan:
   - get: source-code
