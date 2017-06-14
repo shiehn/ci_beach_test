@@ -3,4 +3,4 @@
 set -e
 
 cd source-code
-./gradlew --no-daemon build
+gradle --no-daemon build
