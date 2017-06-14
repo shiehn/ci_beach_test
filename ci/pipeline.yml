@@ -5,6 +5,16 @@ resources:
     uri: https://github.com/shiehn/ci_beach_test.git
     branch: master
 
+- name: resource-deploy-cf
+  type: cf
+  source:
+    api: https://console.run.pivotal.io
+    username: shiehn@pivotal.io
+    password: Bivotal7!
+    organization: shiehn-org
+    space: development
+    skip_cert_check: true
+
 jobs:
 - name: ci_beach_test
   plan:
@@ -12,3 +22,24 @@ jobs:
     trigger: true
   - task: build_source
     file: source-code/ci/build_source_task.yml
+  outputs:
+  - name: built-project
+    path: source-code/build/libs
+
+
+- name: cf_dev_deploy
+  - get: source-code
+    trigger: true
+    passed: [ci_beach_test]
+  - put: resource-deploy-cf
+    params:
+      manifest: source-code/manifest.yml
+      path: source-code/build/libs/ci_beach_test-0.0.1-SNAPSHOT.jar
+
+
+
+
+
+
+
+
