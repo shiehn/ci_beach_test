@@ -1,4 +1,4 @@
 #!/bin/bash
 
 cd source-code
-gradle build
+gradle --no-daemon build
