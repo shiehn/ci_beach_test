@@ -1,4 +1,4 @@
 #!/bin/bash
 
 cd source-code
-gradle --no-daemon --stacktrace build
+sudo gradle --no-daemon --stacktrace build
