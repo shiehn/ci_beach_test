@@ -2,7 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1f2fc3dc-612b-4e1f-a366-e1df2b543b68" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ci/build_source.sh" afterPath="$PROJECT_DIR$/ci/build_source.sh" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ci/build_source_test.sh" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ci/build_source_test.yml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ci/pipeline.yml" afterPath="$PROJECT_DIR$/ci/pipeline.yml" />
     </list>
     <ignored path="$PROJECT_DIR$/.gradle/" />
@@ -32,8 +34,8 @@
       <file leaf-file-name="pipeline.yml" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/ci/pipeline.yml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="285">
-              <caret line="19" column="14" lean-forward="true" selection-start-line="19" selection-start-column="14" selection-end-line="19" selection-end-column="14" />
+            <state relative-caret-position="255">
+              <caret line="17" column="5" lean-forward="true" selection-start-line="17" selection-start-column="5" selection-end-line="17" selection-end-column="5" />
               <folding />
             </state>
           </provider>
@@ -44,6 +46,26 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="240">
               <caret line="16" column="0" lean-forward="true" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="build_source_test.yml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ci/build_source_test.yml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="240">
+              <caret line="16" column="0" lean-forward="true" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="build_source_test.sh" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ci/build_source_test.sh">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="3" lean-forward="false" selection-start-line="0" selection-start-column="3" selection-end-line="0" selection-end-column="3" />
               <folding />
             </state>
           </provider>
@@ -416,6 +438,7 @@
       <list>
         <option value="$PROJECT_DIR$/ci/build_source_task.yml" />
         <option value="$PROJECT_DIR$/ci/build_source.sh" />
+        <option value="$PROJECT_DIR$/ci/build_source_test.sh" />
         <option value="$PROJECT_DIR$/ci/pipeline.yml" />
       </list>
     </option>
@@ -427,8 +450,8 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="144" />
-    <option name="y" value="135" />
+    <option name="x" value="142" />
+    <option name="y" value="124" />
     <option name="width" value="1673" />
     <option name="height" value="1280" />
   </component>
@@ -516,6 +539,11 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/ci" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -921,15 +949,15 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1497454888962</updated>
-      <workItem from="1497454892503" duration="6644000" />
+      <workItem from="1497454892503" duration="7257000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="6644000" />
+    <option name="totallyTimeSpent" value="7257000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="144" y="135" width="1673" height="1280" extended-state="0" />
+    <frame x="142" y="124" width="1673" height="1280" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
@@ -1011,10 +1039,26 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/ci/build_source_test.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="16" column="0" lean-forward="true" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ci/build_source_test.sh">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="3" lean-forward="false" selection-start-line="0" selection-start-column="3" selection-end-line="0" selection-end-column="3" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/ci/pipeline.yml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="19" column="14" lean-forward="true" selection-start-line="19" selection-start-column="14" selection-end-line="19" selection-end-column="14" />
+        <state relative-caret-position="255">
+          <caret line="17" column="5" lean-forward="true" selection-start-line="17" selection-start-column="5" selection-end-line="17" selection-end-column="5" />
           <folding />
         </state>
       </provider>

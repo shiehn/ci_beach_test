@@ -8,7 +8,7 @@ resources:
 - name: resource-deploy-cf
   type: cf
   source:
-    api: https://console.run.pivotal.io
+    api: https://api.run.pivotal.io
     username: shiehn@pivotal.io
     password: Bivotal7!
     organization: shiehn-org
@@ -17,9 +17,17 @@ resources:
 
 jobs:
 - name: ci_beach_test
-  serial: true
   plan:
   - get: source-code
+    trigger: true
+  - task: build_source_test
+    file: source-code/ci/build_source_test.yml
+
+jobs:
+- name: ci_beach_deploy
+  plan:
+  - get: source-code
+    passed: [ci_beach_test]
     trigger: true
   - task: build_source
     file: source-code/ci/build_source_task.yml
