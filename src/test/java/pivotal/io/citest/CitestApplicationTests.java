@@ -13,7 +13,7 @@ public class CitestApplicationTests {
 
 	@Test
 	public void contextLoads() {
-		fail("FAIL LOSER!!");
+		 
 	}
 
 }
