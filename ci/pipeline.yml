@@ -22,19 +22,14 @@ jobs:
     trigger: true
   - task: build_source
     file: source-code/ci/build_source_task.yml
-  outputs:
-  - name: built-project
-    path: source-code/build/libs
-
-
-- name: cf_dev_deploy
-  - get: source-code
-    trigger: true
-    passed: [ci_beach_test]
-  - put: resource-deploy-cf
-    params:
-      manifest: source-code/manifest.yml
-      path: source-code/build/libs/ci_beach_test-0.0.1-SNAPSHOT.jar
+  - task: cf_dev_deploy
+    - get: source-code
+      trigger: true
+      passed: [ci_beach_test]
+    - put: resource-deploy-cf
+      params:
+        manifest: source-code/manifest.yml
+        path: source-code/build/libs/ci_beach_test-0.0.1-SNAPSHOT.jar
 
 
 

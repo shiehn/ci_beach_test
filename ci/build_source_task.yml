@@ -8,6 +8,9 @@ image_resource:
 inputs:
 - name: source-code
 
+outputs:
+- name: backend_build_output
+
 run:
   path: source-code/ci/build_source.sh
   user: root
