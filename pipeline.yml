@@ -11,4 +11,4 @@ jobs:
   - get: source-code
     trigger: true
   - task: build_source
-    file: build_source_task.yml
+    file: source-code/build_source_task.yml
