@@ -24,9 +24,11 @@ jobs:
   - task: build_source
     file: source-code/ci/build_source_task.yml
   - put: resource-deploy-cf
+    inputs:
+    - name: backend_build_output
     params:
-      manifest: ./backend_build_output/manifest.yml
-      path: ./backend_build_output/ci_beach_test-0.0.1-SNAPSHOT.jar
+      manifest: backend_build_output/manifest.yml
+      path: backend_build_output/ci_beach_test-0.0.1-SNAPSHOT.jar
 
 
 
