@@ -17,6 +17,7 @@ resources:
 
 jobs:
 - name: ci_beach_test
+  serial: true
   plan:
   - get: source-code
     trigger: true
@@ -24,8 +25,8 @@ jobs:
     file: source-code/ci/build_source_task.yml
   - put: resource-deploy-cf
     params:
-      manifest: backend_build_output/manifest.yml
-      path: backend_build_output/ci_beach_test-0.0.1-SNAPSHOT.jar
+      manifest: ./backend_build_output/manifest.yml
+      path: ./backend_build_output/ci_beach_test-0.0.1-SNAPSHOT.jar
 
 
 
