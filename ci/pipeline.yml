@@ -17,16 +17,16 @@ resources:
 
 jobs:
 - name: ci_beach_test
+  serial: true
   plan:
   - get: source-code
-    trigger: true
   - task: build_source_test
     file: source-code/ci/build_source_test.yml
 - name: ci_beach_deploy
   plan:
   - get: source-code
-    passed: [ci_beach_test]
     trigger: true
+    passed: [ci_beach_test]
   - task: build_source
     file: source-code/ci/build_source_task.yml
   - put: resource-deploy-cf
