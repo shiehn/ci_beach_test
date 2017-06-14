@@ -74,8 +74,8 @@
       <file leaf-file-name="build_source_test.sh" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/ci/build_source_test.sh">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="30">
-              <caret line="2" column="6" lean-forward="false" selection-start-line="2" selection-start-column="6" selection-end-line="2" selection-end-column="6" />
+            <state relative-caret-position="75">
+              <caret line="5" column="22" lean-forward="false" selection-start-line="5" selection-start-column="21" selection-end-line="5" selection-end-column="22" />
               <folding />
             </state>
           </provider>
@@ -462,8 +462,8 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="37" />
-    <option name="y" value="134" />
+    <option name="x" value="38" />
+    <option name="y" value="133" />
     <option name="width" value="1673" />
     <option name="height" value="1280" />
   </component>
@@ -955,15 +955,15 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1497454888962</updated>
-      <workItem from="1497454892503" duration="8617000" />
+      <workItem from="1497454892503" duration="8791000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="8617000" />
+    <option name="totallyTimeSpent" value="8791000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="37" y="134" width="1673" height="1280" extended-state="0" />
+    <frame x="38" y="133" width="1673" height="1280" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
@@ -1074,8 +1074,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/ci/build_source_test.sh">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="6" lean-forward="false" selection-start-line="2" selection-start-column="6" selection-end-line="2" selection-end-column="6" />
+        <state relative-caret-position="75">
+          <caret line="5" column="22" lean-forward="false" selection-start-line="5" selection-start-column="21" selection-end-line="5" selection-end-column="22" />
           <folding />
         </state>
       </provider>
