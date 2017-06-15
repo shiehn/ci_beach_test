@@ -1,0 +1,17 @@
+
+---
+platform: linux
+
+image_resource:
+  type: docker-image
+  source:
+    repository: pivotalservices/docker-concourse-cf-tools
+    tag: "latest"
+
+
+inputs:
+- name: source-code
+- name: current-app-info
+
+run:
+  path: source-code/ci/tasks/update-routes.sh

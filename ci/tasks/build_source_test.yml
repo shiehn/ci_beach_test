@@ -12,7 +12,7 @@ outputs:
 - name: backend_build_output
 
 run:
-  path: source-code/ci/build_source_test.sh
+  path: source-code/ci/tasks/build_source_test.sh
   user: root
 
 

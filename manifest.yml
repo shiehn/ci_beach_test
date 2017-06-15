@@ -1,6 +1,7 @@
 ---
 applications:
-- name: ci_beach_dev
+- name: ci_beach_test
+
   memory: 512M
   instances: 1
   path: ./build/libs/citest-0.0.1-SNAPSHOT.jar

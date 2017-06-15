@@ -12,17 +12,15 @@ resources:
     repository: ci_beach_test
     access_token: {{github-access-token}}
 
-#- name: resource-deploy-cf
-#  type: cf
-#  source:
-#    api: https://api.run.pivotal.io
-#    username: shiehn@pivotal.io
-#    password: Bivotal7!
-#    organization: shiehn-org
-#    space: development
-#    skip_cert_check: true
-
-
+- name: resource-deploy-cf
+  type: cf
+  source:
+    api: {{pws-api}}
+    organization: {{pws-organization}}
+    username: {{deploy-username}}
+    password: {{deploy-password}}
+    skip_cert_check: true
+    space: {{pws-space}}
 
 jobs:
 - name: ci_build_test_release
@@ -30,24 +28,96 @@ jobs:
   plan:
   - get: source-code
   - task: build_source_test
-    file: source-code/ci/build_source_test.yml
+    file: source-code/ci/tasks/build_source_test.yml
   - put: gh-release
     params:
       name: source-code/ci/release_name.txt
       tag: source-code/ci/release_tag.txt
       globs:
       - backend_build_output/source-code-0.0.1-SNAPSHOT.jar
+
+- name: deploy-app
+  plan:
+    - get: source-code
+      trigger: true
+      passed:
+        - ci_build_test_release
+    - get: gh-release
+    - task: get-current-app-color
+        file: source-code/ci/tasks/current-app-get-info.yml
+        params:
+          PWS_APP_SUFFIX: {{pws-app-suffix}}
+          PWS_API: {{pws-api}}
+          PWS_ORG: {{pws-organization}}
+          PWS_USER: {{deploy-username}}
+          PWS_PWD: {{deploy-password}}
+          PWS_SPACE: {{pws-space}}
+    - task: prepare-app-manifest
+        file: source-code/ci/tasks/app-manifest-prep.yml
+        params:
+          PWS_APP_SUFFIX: {{pws-app-suffix}}
+    - put: resource-deploy-cf
+        params:
+          manifest: app-manifest-output/manifest.yml
+          path: gh-release/source-code-0.0.1-SNAPSHOT.jar
+
+
+
+
+
+
+- name: promote-new-version
+  serial: true
+  public: true
+  plan:
+  - get: source-code
+    trigger: true
+#    passed:
+#      - load-tests
+  - task: get-current-app-color
+    file: source-code/ci/tasks/current-app-get-info.yml
+    params:
+      PWS_APP_SUFFIX: {{pws-app-suffix}}
+      PWS_API: {{pws-api}}
+      PWS_ORG: {{pws-organization}}
+      PWS_USER: {{deploy-username}}
+      PWS_PWD: {{deploy-password}}
+      PWS_SPACE: {{pws-space}}
+  - task: switch-app-routes
+    file: source-code/ci/tasks/update-routes.yml
+    params:
+      PWS_APP_SUFFIX: {{pws-app-suffix}}
+      PWS_APP_DOMAIN: {{pws-app-domain}}
+      PWS_API: {{pws-api}}
+      PWS_ORG: {{pws-organization}}
+      PWS_USER: {{deploy-username}}
+      PWS_PWD: {{deploy-password}}
+      PWS_SPACE: {{pws-space}}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 #- name: ci_beach_deploy
 #  plan:
 #  - get: source-code
 #    trigger: true
 #    passed: [ci_build_test_release]
-#  - task: build_source
-#    file: source-code/ci/build_source_task.yml
+#  - get: gh-release
 #  - put: resource-deploy-cf
 #    params:
-#      manifest: backend_build_output/manifest.yml
-#      path: backend_build_output/source-code-0.0.1-SNAPSHOT.jar
+#      manifest: source-code/manifest.yml
+#      path: gh-release/source-code-0.0.1-SNAPSHOT.jar
 
 
 
