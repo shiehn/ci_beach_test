@@ -30,7 +30,14 @@ public class SmokeTests {
         String suffix  = System.getenv("PWS_APP_SUFFIX");
         String domain  = System.getenv("PWS_APP_DOMAIN");
 
-        ResponseEntity<Void> response = restTemplate.getForEntity(String.format("http://%s-%s.%s", colour, suffix, domain), Void.class);
+        String url = String.format("http://%s-%s.%s", colour, suffix, domain);
+
+        System.out.println("TEST URL: " + url);
+
+        ResponseEntity<Void> response = restTemplate.getForEntity(url, Void.class);
+
+        System.out.println("TEST RESPONSE: " + response);
+
         assertThat(response.getStatusCode()).isEqualTo(HttpStatus.OK);
     }
 }
