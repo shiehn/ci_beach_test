@@ -5,6 +5,13 @@ resources:
     uri: https://github.com/shiehn/ci_beach_test.git
     branch: master
 
+- name: gh-release
+  type: github-release
+  source:
+    owner: xtreme-stevehiehn
+    repository: ci_beach_test
+    access_token: 75ea8d0391bc9496e89188c6267e2634816e15dc
+
 - name: resource-deploy-cf
   type: cf
   source:
@@ -15,24 +22,32 @@ resources:
     space: development
     skip_cert_check: true
 
+
+
 jobs:
-- name: ci_beach_test
+- name: ci_build_test_release
   serial: true
   plan:
   - get: source-code
   - task: build_source_test
     file: source-code/ci/build_source_test.yml
-- name: ci_beach_deploy
-  plan:
-  - get: source-code
-    trigger: true
-    passed: [ci_beach_test]
-  - task: build_source
-    file: source-code/ci/build_source_task.yml
-  - put: resource-deploy-cf
+  - put: gh-release
     params:
-      manifest: backend_build_output/manifest.yml
-      path: backend_build_output/source-code-0.0.1-SNAPSHOT.jar
+      name: source-code/ci/release_name.txt
+      tag: source-code/ci/release_tag.txt
+      globs:
+      - backend_build_output/source-code-0.0.1-SNAPSHOT.jar
+#- name: ci_beach_deploy
+#  plan:
+#  - get: source-code
+#    trigger: true
+#    passed: [ci_build_test_release]
+#  - task: build_source
+#    file: source-code/ci/build_source_task.yml
+#  - put: resource-deploy-cf
+#    params:
+#      manifest: backend_build_output/manifest.yml
+#      path: backend_build_output/source-code-0.0.1-SNAPSHOT.jar
 
 
 
