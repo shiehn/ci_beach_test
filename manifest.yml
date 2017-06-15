@@ -1,6 +1,6 @@
 ---
 applications:
-- name: ci_beach_test
+- name: APPNAME
 
   memory: 512M
   instances: 1
