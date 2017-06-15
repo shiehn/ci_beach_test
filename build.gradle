@@ -29,6 +29,7 @@ dependencies {
 
 
 task smokeTests(type: Test) {
+	println "$System.env"
 	useJUnit {
 		systemProperty "testprofile", "smoketests"
 	}

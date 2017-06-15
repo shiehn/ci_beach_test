@@ -4,6 +4,7 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.core.env.Environment;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.test.annotation.IfProfileValue;
@@ -23,12 +24,11 @@ public class SmokeTests {
 
     @Test
     public void shouldReturn20OkWhenDeployed() throws IOException {
-
         RestTemplate restTemplate = new RestTemplate();
 
         String colour = Files.lines(Paths.get("../current-app-info/next-app.txt")).findFirst().get();
-        String suffix = System.getenv("PWS_APP_SUFFIX");
-        String domain = System.getenv("PWS_APP_DOMAIN");
+        String suffix = System.getenv("HOME");
+        String domain = System.getenv("HOME");
 
         String url = String.format("http://%s-%s.%s", colour, suffix, domain);
 
