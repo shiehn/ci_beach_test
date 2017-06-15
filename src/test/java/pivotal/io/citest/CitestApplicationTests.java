@@ -3,6 +3,7 @@ package pivotal.io.citest;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.test.annotation.IfProfileValue;
 import org.springframework.test.context.junit4.SpringRunner;
 
 import static junit.framework.TestCase.fail;
@@ -15,5 +16,4 @@ public class CitestApplicationTests {
 	public void contextLoads() {
 
 	}
-
 }
