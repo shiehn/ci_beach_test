@@ -60,10 +60,11 @@ jobs:
       params:
         manifest: app-manifest-output/manifest.yml
         path: gh-release/source-code-0.0.1-SNAPSHOT.jar
-
-
-
-
+    - task: smoke-tests
+      file: source-code/ci/tasks/smoke-tests.yml
+      params:
+        PWS_APP_SUFFIX: {{pws-app-suffix}}
+        PWS_APP_DOMAIN: {{pws-app-domain}}
 
 
 - name: promote-new-version

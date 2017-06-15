@@ -21,15 +21,12 @@ import static org.assertj.core.api.Assertions.assertThat;
 @SpringBootTest
 public class SmokeTests {
 
-
-
     @Test
     public void shouldReturn20OkWhenDeployed() throws IOException {
 
         RestTemplate restTemplate = new RestTemplate();
 
-
-        String colour = Files.lines(Paths.get("current-app-info/next-app.txt")).findFirst().get();
+        String colour = Files.lines(Paths.get("../current-app-info/next-app.txt")).findFirst().get();
         String suffix  = System.getenv("PWS_APP_SUFFIX");
         String domain  = System.getenv("PWS_APP_DOMAIN");
 
