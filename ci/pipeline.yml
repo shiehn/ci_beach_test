@@ -10,7 +10,7 @@ resources:
   source:
     owner: shiehn
     repository: ci_beach_test
-    access_token: a3eebf3a74da431d0e78868a2f3389d228a9c21d
+    access_token: 289afc3942e8cb012f6f315a48fdb349a6160daf
 
 #- name: resource-deploy-cf
 #  type: cf
