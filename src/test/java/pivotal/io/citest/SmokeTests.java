@@ -27,8 +27,8 @@ public class SmokeTests {
         RestTemplate restTemplate = new RestTemplate();
 
         String colour = Files.lines(Paths.get("../current-app-info/next-app.txt")).findFirst().get();
-        String suffix  = System.getenv("PWS_APP_SUFFIX");
-        String domain  = System.getenv("PWS_APP_DOMAIN");
+        String suffix = System.getenv("PWS_APP_SUFFIX");
+        String domain = System.getenv("PWS_APP_DOMAIN");
 
         String url = String.format("http://%s-%s.%s", colour, suffix, domain);
 
