@@ -7,6 +7,7 @@ import java.util.Date;
 @RestController
 public class CiController {
 
+    
     Date deployDate = null;
 
     @RequestMapping(value = "/", produces = "application/json")
